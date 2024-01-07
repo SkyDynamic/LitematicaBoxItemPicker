@@ -1,21 +1,21 @@
-package dev.skydynamic.lazyshulkerboxplus;
+package dev.skydynamic.litematicaboxitempicker;
 
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import dev.skydynamic.lazyshulkerboxplus.config.Configs;
+import dev.skydynamic.litematicaboxitempicker.config.Configs;
 import fi.dy.masa.malilib.hotkeys.IHotkey;
 import fi.dy.masa.malilib.hotkeys.IKeybindManager;
 import fi.dy.masa.malilib.hotkeys.IKeybindProvider;
 
-public class LazyShulkerBoxInputHandler implements IKeybindProvider{
+public class LitematicaShulkerBoxPickerInputHandler implements IKeybindProvider{
 
-    private static final LazyShulkerBoxInputHandler INSTANCE = new LazyShulkerBoxInputHandler();
+    private static final LitematicaShulkerBoxPickerInputHandler INSTANCE = new LitematicaShulkerBoxPickerInputHandler();
 
-    private LazyShulkerBoxInputHandler() {
+    private LitematicaShulkerBoxPickerInputHandler() {
         super();
     }
 
-    public static LazyShulkerBoxInputHandler getInstance() {
+    public static LitematicaShulkerBoxPickerInputHandler getInstance() {
         return INSTANCE;
     }
 

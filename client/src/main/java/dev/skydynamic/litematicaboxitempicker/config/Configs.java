@@ -1,9 +1,9 @@
-package dev.skydynamic.lazyshulkerboxplus.config;
+package dev.skydynamic.litematicaboxitempicker.config;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.skydynamic.lazyshulkerboxplus.Reference;
+import dev.skydynamic.litematicaboxitempicker.Reference;
 import fi.dy.masa.malilib.config.ConfigUtils;
 import fi.dy.masa.malilib.config.IConfigBase;
 import fi.dy.masa.malilib.config.IConfigHandler;

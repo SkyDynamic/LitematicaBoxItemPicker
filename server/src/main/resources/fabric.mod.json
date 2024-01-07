@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "lazyshulkerbox-plus-server",
+  "id": "litematica-shulker-box-picker-server",
   "version": "${version}",
   "name": "LazyShulkerBoxPlusServer",
   "description": "从潜影盒取出相同物品",
@@ -8,18 +8,18 @@
     "SkyDynamic"
   ],
   "contact": {
-    "repo": "https://github.com/SkyDynamic/LazyShulkerBoxPlus"
+    "issues": "https://github.com/SkyDynamic/LitematicaBoxItemPicker/issues/",
+    "sources": "https://github.com/SkyDynamic/LitematicaBoxItemPicker/"
   },
   "license": "LGPL-3.0",
-  "icon": "assets/lazyshulkerbox-plus/icon.png",
-  "environment": "*",
+  "environment": "server",
   "entrypoints": {
     "server": [
-      "dev.skydynamic.lazyshulkerboxplus.LazyShulkerBoxServer"
+      "dev.skydynamic.litematicaboxitempicker.LitematicaShulkerBoxPickerServer"
     ]
   },
   "mixins": [
-    "lazyshulkerbox-plus.mixins.json"
+    "litematica-shulker-box-picker.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",

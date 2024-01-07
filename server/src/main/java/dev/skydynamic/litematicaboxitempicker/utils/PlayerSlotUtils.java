@@ -1,4 +1,4 @@
-package dev.skydynamic.lazyshulkerboxplus.utils;
+package dev.skydynamic.litematicaboxitempicker.utils;
 
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerInventory;

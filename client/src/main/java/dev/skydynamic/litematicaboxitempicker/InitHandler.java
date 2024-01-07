@@ -1,6 +1,6 @@
-package dev.skydynamic.lazyshulkerboxplus;
+package dev.skydynamic.litematicaboxitempicker;
 
-import dev.skydynamic.lazyshulkerboxplus.config.Configs;
+import dev.skydynamic.litematicaboxitempicker.config.Configs;
 import fi.dy.masa.malilib.config.ConfigManager;
 import fi.dy.masa.malilib.event.InputEventHandler;
 import fi.dy.masa.malilib.gui.GuiBase;
@@ -14,7 +14,7 @@ public class InitHandler implements IInitializationHandler {
     @Override
     public void registerModHandlers() {
         ConfigManager.getInstance().registerConfigHandler(Reference.MOD_ID, new Configs());
-        InputEventHandler.getKeybindManager().registerKeybindProvider(LazyShulkerBoxInputHandler.getInstance());
+        InputEventHandler.getKeybindManager().registerKeybindProvider(LitematicaShulkerBoxPickerInputHandler.getInstance());
 
         Configs.Hotkeys.OPEN_GUI_MAIN_MENU.getKeybind().setCallback(new KeyCallbackHotkeys());
         Configs.Hotkeys.ENABLE_LSBP.getKeybind().setCallback(new KeyCallbackToggleBooleanConfigWithMessage(Configs.Generic.ENABLE_LSBP));
@@ -24,7 +24,7 @@ public class InitHandler implements IInitializationHandler {
         @Override
         public boolean onKeyAction(KeyAction action, IKeybind key) {
             if (key == Configs.Hotkeys.OPEN_GUI_MAIN_MENU.getKeybind()) {
-                GuiBase.openGui(new LazyShulkerBoxConfigGui());
+                GuiBase.openGui(new LitematicaShulkerBoxPickerConfigGui());
             }
             return true;
         }

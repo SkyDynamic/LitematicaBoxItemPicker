@@ -1,9 +1,9 @@
-package dev.skydynamic.lazyshulkerboxplus;
+package dev.skydynamic.litematicaboxitempicker;
 
 import java.util.Collections;
 import java.util.List;
 
-import dev.skydynamic.lazyshulkerboxplus.config.Configs;
+import dev.skydynamic.litematicaboxitempicker.config.Configs;
 import fi.dy.masa.malilib.config.IConfigBase;
 import fi.dy.masa.malilib.gui.GuiConfigsBase;
 import fi.dy.masa.malilib.gui.button.ButtonBase;
@@ -11,11 +11,11 @@ import fi.dy.masa.malilib.gui.button.ButtonGeneric;
 import fi.dy.masa.malilib.gui.button.IButtonActionListener;
 import fi.dy.masa.malilib.util.StringUtils;
 
-public class LazyShulkerBoxConfigGui extends GuiConfigsBase{
+public class LitematicaShulkerBoxPickerConfigGui extends GuiConfigsBase{
 
     private static ConfigGuiTab tab = ConfigGuiTab.GENERIC;
 
-    public LazyShulkerBoxConfigGui()
+    public LitematicaShulkerBoxPickerConfigGui()
     {
         super(10, 50, Reference.MOD_ID, null, "LazyShulkerBoxConfig");
     }
@@ -39,7 +39,7 @@ public class LazyShulkerBoxConfigGui extends GuiConfigsBase{
     private int createButton(int x, int y, int width, ConfigGuiTab tab)
     {
         ButtonGeneric button = new ButtonGeneric(x, y, width, 20, tab.getDisplayName());
-        button.setEnabled(LazyShulkerBoxConfigGui.tab != tab);
+        button.setEnabled(LitematicaShulkerBoxPickerConfigGui.tab != tab);
         this.addButton(button, new ButtonListener(tab, this));
 
         return button.getWidth();
@@ -48,7 +48,7 @@ public class LazyShulkerBoxConfigGui extends GuiConfigsBase{
     @Override
     protected int getConfigWidth()
     {
-        ConfigGuiTab tab = LazyShulkerBoxConfigGui.tab;
+        ConfigGuiTab tab = LitematicaShulkerBoxPickerConfigGui.tab;
 
         if (tab == ConfigGuiTab.GENERIC)
         {
@@ -62,7 +62,7 @@ public class LazyShulkerBoxConfigGui extends GuiConfigsBase{
     public List<GuiConfigsBase.ConfigOptionWrapper> getConfigs()
     {
         List<? extends IConfigBase> configs;
-        ConfigGuiTab tab = LazyShulkerBoxConfigGui.tab;
+        ConfigGuiTab tab = LitematicaShulkerBoxPickerConfigGui.tab;
 
         if (tab == ConfigGuiTab.GENERIC) {
             configs = Configs.Generic.OPTIONS;
@@ -77,10 +77,10 @@ public class LazyShulkerBoxConfigGui extends GuiConfigsBase{
 
     private static class ButtonListener implements IButtonActionListener
     {
-        private final LazyShulkerBoxConfigGui parent;
+        private final LitematicaShulkerBoxPickerConfigGui parent;
         private final ConfigGuiTab tab;
 
-        public ButtonListener(ConfigGuiTab tab, LazyShulkerBoxConfigGui parent)
+        public ButtonListener(ConfigGuiTab tab, LitematicaShulkerBoxPickerConfigGui parent)
         {
             this.tab = tab;
             this.parent = parent;
@@ -89,7 +89,7 @@ public class LazyShulkerBoxConfigGui extends GuiConfigsBase{
         @Override
         public void actionPerformedWithButton(ButtonBase button, int mouseButton)
         {
-            LazyShulkerBoxConfigGui.tab = this.tab;
+            LitematicaShulkerBoxPickerConfigGui.tab = this.tab;
 
             this.parent.reCreateListWidget(); // apply the new config width
             this.parent.getListWidget().resetScrollbarPosition();

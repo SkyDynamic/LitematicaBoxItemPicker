@@ -1,4 +1,4 @@
-package dev.skydynamic.lazyshulkerboxplus;
+package dev.skydynamic.litematicaboxitempicker;
 
 import net.fabricmc.api.DedicatedServerModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
@@ -8,9 +8,9 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import static dev.skydynamic.lazyshulkerboxplus.utils.PlayerSlotUtils.*;
+import static dev.skydynamic.litematicaboxitempicker.utils.PlayerSlotUtils.*;
 
-public class LazyShulkerBoxServer implements DedicatedServerModInitializer {
+public class LitematicaShulkerBoxPickerServer implements DedicatedServerModInitializer {
 
     @Override
     public void onInitializeServer() {

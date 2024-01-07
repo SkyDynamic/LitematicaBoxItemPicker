@@ -1,4 +1,4 @@
-package dev.skydynamic.lazyshulkerboxplus;
+package dev.skydynamic.litematicaboxitempicker;
 
 import fi.dy.masa.malilib.event.InitializationHandler;
 import net.fabricmc.api.ClientModInitializer;
@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import static fi.dy.masa.litematica.util.InventoryUtils.setPickedItemToHand;
 
-public class LazyShulkerBoxPlusClient implements ClientModInitializer {
+public class LitematicaShulkerBoxPickerClient implements ClientModInitializer {
     public static final Logger logger = LoggerFactory.getLogger(Reference.MOD_ID);
 
     @Override

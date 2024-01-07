@@ -1,6 +1,7 @@
-package dev.skydynamic.lazyshulkerboxplus.mixin;
+package dev.skydynamic.litematicaboxitempicker.mixin;
 
-import dev.skydynamic.lazyshulkerboxplus.config.Configs;
+import dev.skydynamic.litematicaboxitempicker.config.Configs;
+import dev.skydynamic.litematicaboxitempicker.utils.PlayerSlotUtils;
 import fi.dy.masa.litematica.util.InventoryUtils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -19,8 +20,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static dev.skydynamic.lazyshulkerboxplus.utils.PlayerSlotUtils.getPlayerSlotHaveEmpty;
-import static dev.skydynamic.lazyshulkerboxplus.utils.PlayerSlotUtils.moveBoxItem;
 import static fi.dy.masa.litematica.util.InventoryUtils.findSlotWithBoxWithItem;
 import static fi.dy.masa.litematica.util.InventoryUtils.setPickedItemToHand;
 
@@ -41,11 +40,11 @@ public abstract class LitematicaInventoryUtilsMixin {
             ClientPlayerEntity player = mc.player;
             int slot = findSlotWithBoxWithItem(player.currentScreenHandler, stack, false);
             int maxMoveCount = Configs.Generic.LSBP_COUNT.getIntegerValue();
-            if (slot != -1 && getPlayerSlotHaveEmpty(player)) {
+            if (slot != -1 && PlayerSlotUtils.getPlayerSlotHaveEmpty(player)) {
                 ItemStack boxStack = player.playerScreenHandler.slots.get(slot).getStack();
                 if (mc.getCurrentServerEntry() == null) {
                     ServerPlayerEntity serverPlayer = mc.getServer().getPlayerManager().getPlayer(player.getUuid());
-                    moveBoxItem(serverPlayer, stack, boxStack, maxMoveCount, slot);
+                    PlayerSlotUtils.moveBoxItem(serverPlayer, stack, boxStack, maxMoveCount, slot);
                     setPickedItemToHand(stack, mc);
                     ci.cancel();
                 }
