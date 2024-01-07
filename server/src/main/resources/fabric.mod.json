@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "litematica-shulker-box-picker-server",
   "version": "${version}",
-  "name": "LazyShulkerBoxPlusServer",
+  "name": "LitematicaShulkerBoxPickerServer",
   "description": "从潜影盒取出相同物品",
   "authors": [
     "SkyDynamic"
