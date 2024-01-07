@@ -1,7 +1,17 @@
 apply plugin: 'fabric-loom'
 
-version = project.mod_version
+String versionSuffix = ''
+// detect github action environment variables
+// https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
+if (System.getenv("BUILD_RELEASE") != "true") {
+    String buildNumber = System.getenv("BUILD_ID")
+    versionSuffix += buildNumber != null ? ('+build.' + buildNumber) : '+SNAPSHOT'
+}
+String fullModVersion = project.mod_version + versionSuffix
+
+version = 'v' + fullModVersion
 group = project.maven_group
+archivesBaseName = project.archives_base_name + '-mc' + project.minecraft_version
 
 repositories {
 }
@@ -46,7 +56,6 @@ java {
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
-    archivesBaseName = project.archives_base_name
     // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
     // if it is present.
     // If you remove this line, sources will not be generated.
