@@ -32,7 +32,6 @@ dependencies {
     modImplementation "curse.maven:litematica-308892:4626718"
 
     modCompileOnlyApi "com.terraformersmc:modmenu:7.2.2"
-    modImplementation "com.terraformersmc:modmenu:7.2.2"
     }
 
 processResources {
